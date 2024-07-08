@@ -1,5 +1,6 @@
 #include "astronauta.h"
 
+#include <iomanip>
 #include <iostream>
 
 astronauta::astronauta() {}
@@ -27,19 +28,20 @@ void astronauta::set_morto() { morto = 1; }
 string astronauta::get_nome() { return nome; }
 
 std::ostream& operator<<(std::ostream& o, astronauta const a) {
-    o << a.cpf << "\t" << a.nome << "\t" << a.idade << "\t";
+    o << std::setw(12) << std::setfill(' ') << a.cpf << std::setw(13) << a.nome
+      << std::setw(6) << a.idade;
 
     if (a.disponivel) {
-        o << "Sim\t\t";
+        o << std::setw(11) << "Sim";
     } else {
-        o << "Nao\t\t";
+        o << std::setw(11) << "Nao";
     }
 
     if (a.morto) {
-        o << "Sim";
+        o << std::setw(5) << "Sim";
     } else {
-        o << "Nao";
+        o << std::setw(5) << "Nao";
     }
 
-    return o;
+    return o << std::setw(3) << std::right << "|";
 }

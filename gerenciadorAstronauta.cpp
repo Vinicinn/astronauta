@@ -1,5 +1,8 @@
 #include "gerenciadorAstronauta.h"
 
+#include <unistd.h>
+
+#include <iomanip>
 #include <iostream>
 
 gerenciadorAstronauta::gerenciadorAstronauta() {}
@@ -24,7 +27,10 @@ int gerenciadorAstronauta::verificar_cpf(string cpf) {
     for (vector<astronauta>::iterator it = lista_astronautas.begin();
          it != lista_astronautas.end(); it++) {
         if ((*it).get_cpf().compare(cpf) == 0) {
-            std::cout << "CPF EM USO." << std::endl;
+            std::cout << "\033[F";
+            std::cout << '|' << std::setw(17) << std::right << "-> CPF EM USO"
+                      << std::endl;
+            sleep(3);
             return 1;
         }
     }
@@ -32,11 +38,24 @@ int gerenciadorAstronauta::verificar_cpf(string cpf) {
 }
 
 void gerenciadorAstronauta::mortos() {
+    int verificar = 1;
     for (vector<astronauta>::iterator it = lista_astronautas.begin();
          it != lista_astronautas.end(); it++) {
         if ((*it).get_morto()) {
+            if (verificar) {
+                verificar = 0;
+            }
             std::cout << (*it) << std::endl;
         }
+    }
+    if (verificar) {
+        std::cout << '/' << std::setw(59) << std::setfill('-') << std::right
+                  << '\\' << std::endl;
+        std::cout << std::setw(5) << std::setfill(' ') << std::left << "|"
+                  << std::setw(50) << "Nenhum astronauta morto." << std::setw(5)
+                  << std::right << '|' << std::endl;
+        std::cout << '\\' << std::setw(59) << std::setfill('-') << std::right
+                  << '/' << std::endl;
     }
 }
 

@@ -1,5 +1,8 @@
 #include "gerenciadorVoo.h"
 
+#include <unistd.h>
+
+#include <iomanip>
 #include <iostream>
 
 gerenciadorVoo::gerenciadorVoo() {}
@@ -33,7 +36,10 @@ int gerenciadorVoo::verificar_codigo(int codigo, int opcao) {
          it++) {
         if ((*it).get_codigo() == codigo) {
             if (opcao) {
-                std::cout << "CODIGO EM USO" << std::endl;
+                std::cout << "\033[F";
+                std::cout << '|' << std::setw(20) << std::right
+                          << "-> CODIGO EM USO" << std::endl;
+                sleep(3);
             }
             return 1;
         }

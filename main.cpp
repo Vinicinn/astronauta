@@ -1,24 +1,44 @@
-#include <unistd.h>
 #include <stdio.h>
+#include <unistd.h>
 
+#include <iomanip>
 #include <iostream>
 
 #include "sistema.h"
-using std::cout, std::endl, std::cin;
+using std::cout, std::endl, std::cin, std::setw, std::setfill, std::left,
+    std::right;
 
-// IMPRESSAO DO MENU DE SELECAO
 void menu() {
     system("clear");
-    cout << "1 - Cadastrar Astronauta." << endl;                // OK
-    cout << "2 - Cadastrar Voo." << endl;                       // OK
-    cout << "3 - Adicionar Astronauta em Voo." << endl;         // OK
-    cout << "4 - Remover Astronauta de um Voo." << endl;        // OK
-    cout << "5 - Lancar um Voo." << endl;                       // OK
-    cout << "6 - Explodir Voo." << endl;                        // NOK
-    cout << "7 - Finalizar um Voo" << endl;                     // NOK
-    cout << "8 - Listar todos os Voos." << endl;                // NOK
-    cout << "9 - Listar todos os Astronautas mortos." << endl;  // NOK
-    cout << "0 - Encerrar." << endl;                            // OK
+
+    cout << '/' << setw(59) << setfill('-') << right << '\\' << endl;
+
+    cout << setw(5) << setfill(' ') << left << "|" << setw(50)
+         << "1 - Cadastrar Astronauta." << setw(5) << right << '|' << endl;
+    cout << setw(5) << setfill(' ') << left << "|" << setw(50)
+         << "2 - Cadastrar Voo." << setw(5) << right << '|' << endl;
+    cout << setw(5) << setfill(' ') << left << "|" << setw(50)
+         << "3 - Adicionar Astronauta em Voo." << setw(5) << right << '|'
+         << endl;
+    cout << setw(5) << setfill(' ') << left << "|" << setw(50)
+         << "4 - Remover Astronauta de um Voo." << setw(5) << right << '|'
+         << endl;
+    cout << setw(5) << setfill(' ') << left << '|' << setw(50)
+         << "5 - Lancar um Voo." << setw(5) << right << '|' << endl;
+    cout << setw(5) << setfill(' ') << left << '|' << setw(50)
+         << "6 - Explodir Voo." << setw(5) << right << '|' << endl;
+    cout << setw(5) << setfill(' ') << left << '|' << setw(50)
+         << "7 - Finalizar um Voo." << setw(5) << right << '|' << endl;
+    cout << setw(5) << setfill(' ') << left << '|' << setw(50)
+         << "8 - Listar todos os Voos." << setw(5) << right << '|' << endl;
+    cout << setw(5) << setfill(' ') << left << '|' << setw(50)
+         << "9 - Listar todos os Astronautas mortos." << setw(5) << right << '|'
+         << endl;
+    cout << setw(5) << setfill(' ') << left << '|' << setw(50)
+         << "0 - Encerrar." << setw(5) << right << '|' << endl;
+
+    cout << '|' << setw(59) << setfill('-') << right << '/' << endl;
+    cout << '\\' << "-> ";
 }
 
 int main() {
@@ -68,7 +88,7 @@ int main() {
             case 8:
                 system("clear");
                 sistema.listar_voos();
-                cout << "Aperte qualquer tecla para voltar..." << endl;
+                cout << "Aperte Enter para voltar..." << endl;
                 getchar();
                 getchar();
                 break;

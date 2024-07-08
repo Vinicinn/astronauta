@@ -14,7 +14,10 @@ prog: main.o sistema.o astronauta.o voo.o gerenciadorAstronauta.o gerenciadorVoo
 	g++ -o prog main.o sistema.o astronauta.o voo.o gerenciadorAstronauta.o gerenciadorVoo.o -Wall -fsanitize=address
 debug: main.cpp sistema.cpp astronauta.cpp voo.cpp gerenciadorAstronauta.cpp gerenciadorVoo.cpp
 	g++ -O0 -g -o debug main.cpp sistema.cpp astronauta.cpp voo.cpp gerenciadorAstronauta.cpp gerenciadorVoo.cpp
-all: prog
+run: prog
 	./prog
 clear:
-	rm *.o prog debug
+	rm -f *.o prog debug
+all: 
+	make clear
+	make run
