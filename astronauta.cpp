@@ -43,5 +43,5 @@ std::ostream& operator<<(std::ostream& o, astronauta const a) {
         o << std::setw(5) << "Nao";
     }
 
-    return o << std::setw(3) << std::right << "|";
+    return o;
 }

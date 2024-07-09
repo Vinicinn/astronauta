@@ -45,7 +45,9 @@ void gerenciadorAstronauta::mortos() {
             if (verificar) {
                 verificar = 0;
             }
-            std::cout << (*it) << std::endl;
+            std::cout << std::setw(5) << std::setfill(' ') << std::left << '|';
+            std::cout << (*it);
+            std::cout << std::setw(8) << std::right << '|' << std::endl;
         }
     }
     if (verificar) {

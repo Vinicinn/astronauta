@@ -401,10 +401,17 @@ void sistema::listar_mortos() {
     if (gerenteA.vazio()) {
         cout << '/' << setw(59) << setfill('-') << right << '\\' << endl;
         cout << setw(5) << setfill(' ') << left << "|" << setw(50)
-             << "Nenhum astronauta cadastrado." << setw(5)
-             << right << '|' << endl;
+             << "Nenhum astronauta cadastrado." << setw(5) << right << '|'
+             << endl;
         cout << '\\' << setw(59) << setfill('-') << right << '/' << endl;
     } else {
+        cout << '/' << setw(59) << setfill('-') << right << '\\' << endl;
+        cout << setw(5) << setfill(' ') << left << "|" << setw(12) << "CPF"
+             << setw(13) << "Nome" << setw(6) << "Idade" << setw(11)
+             << "Disponivel" << setw(5) << "Morto" << setw(8) << right << '|'
+             << endl;
+        cout << '|' << setw(59) << setfill('-') << right << '|' << endl;
         gerenteA.mortos();
+        cout << '\\' << setw(59) << setfill('-') << right << '/' << endl;
     }
 }

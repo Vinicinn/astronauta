@@ -62,7 +62,6 @@ int voo::passageiros_disponiveis() {
 }
 
 void voo::listar_passageiros() {
-    std::cout << "ENTROU LISTAR" << std::endl;
     for (vector<astronauta*>::iterator it = passageiros.begin();
          it != passageiros.end(); it++) {
         std::cout << "|" << std::setw(6) << std::right << '\\' << std::setw(3)
