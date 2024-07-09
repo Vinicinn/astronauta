@@ -5,7 +5,9 @@ LINGUAGEM DE PROGRAMACAO 1
 Utilizei Makefile para compilacao dos arquivos e execucao do programa
 
 make all -> primeiro limpa os arquivos ja compilado, compila e em seguida executa o programa
+
 make clear -> remove os arquivos ja compilados
+
 make prog -> compila e linka o programa
 
 make all ja faz rodar tudo, usar ele de preferencia
