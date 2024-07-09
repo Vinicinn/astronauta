@@ -12,8 +12,8 @@ make prog -> compila e linka o programa
 
 make all ja faz rodar tudo, usar ele de preferencia
 
-gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
-
 a funcao 8 esta com problemas, podendo 'crashar' o programa em alguns casos, as demais funcionalidades estao implementadas como solicitado.
 
 Vinicius Alexandre Melo.
+
+!!!gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04)!!!
